@@ -27,4 +27,22 @@ void Display(LinkList L);
 
 LinkList SortUp(LinkList);
 
+#define STACKMAXSIZE 50
+
+typedef struct SqStack{
+    int data[STACKMAXSIZE];
+    int top;
+} SqStack;
+
+int SqInitStack(SqStack *S); 
+
+int SqStackEmpty(SqStack *S);
+
+int SqPush(SqStack *S, int x);
+int SqPop(SqStack *S, int *x);
+
+int SqGetTop(SqStack *S, int *x);
+
+int SqDestoryStack(SqStack *S);
+
 #endif

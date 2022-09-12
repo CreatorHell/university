@@ -149,3 +149,42 @@ LinkList SortUp(LinkList L){
     }
     return L2;
 }
+
+int SqInitStack(SqStack *S){
+    S->top = -1;
+    return 1; 
+}
+
+int SqStackEmpty(SqStack *S){
+    return S->top != -1;
+}
+
+int SqPush(SqStack *S, int x){
+    if(S->top < STACKMAXSIZE - 1){
+        S->data[++S->top] = x;
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int SqPop(SqStack *S, int *x){
+    if(S->top > -1){
+        *x = S->data[S->top--];
+        return 1;
+    }
+    return 0;
+}
+
+int SqGetTop(SqStack *S, int *x){
+    if(S->top > -1){
+        *x = S->data[S->top];
+        return 1;
+    }
+    return 0;
+}
+
+int SqDestoryStack(SqStack *S){
+    S->top = -1;
+    return 1;
+}
